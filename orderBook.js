@@ -1,26 +1,25 @@
 
+// existingBook = ['type', 'quantity', 'price']
+// incomingOrder =  ['type', 'quantity', 'price']
 
-const reconcileOrder = (existingBook, incomingOrder) => {
-  if (existingBook.length < 1) existingBook.push(incomingOrder)
+// type= ['sell', 'buy']
+// quantity= [5, 10, 12, 15, 25]
+// price = [5900, 5950, 6000, 6150, 6250, 6950]
 
-  let type = ['sell', 'buy']
-  let quantity = [5, 10, 12, 15, 25]
-  let price = [5900, 5950, 6000, 6150, 6250, 6950]
-  const updatedBook = [existingBook, incomingOrder]
+// updatedBook === ['existingBook', 'incomingOrder']
+// return the updatedBook
 
-  if (incomingOrder.type === type[0]) {
-    type = 'sell'
-  }
 
-  if (incomingOrder.quantity === quantity[1]) {
-    quantity = 10
-  }
+const reconcileOrder = (existingBook) => {
+// let existingBook = ['type', 'quantity', 'price']
+  let updatedBook = []
 
-  if (incomingOrder.price === price[3]) {
-    price = 6150
+  for (let i = 0; i < existingBook.length; i++) {
+    if (updatedBook.indexOf(existingBook[1] < 0)) updatedBook.push(existingBook[i])
   }
 
   return updatedBook
 }
+
 
 module.exports = reconcileOrder
