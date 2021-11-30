@@ -1,13 +1,17 @@
 const reconcileOrder = (existingBook, incomingOrder, updatedBook) => {
-  const orderOne = firstOrder(existingBook, incomingOrder, updatedBook)
+  const startBook = startingOrder(existingBook, incomingOrder, updatedBook)
 
-  console.log(orderOne)
+  console.log(startBook)
 }
 
-const firstOrder = (existingBook, incomingOrder, updatedBook) => {
-  const orderOne = { ...incomingOrder }
-  console.log(orderOne)
+const startingOrder = (existingBook, incomingOrder, updatedBook) => {
+  const firstOrder = { ...incomingOrder }
 
+  if (existingBook.length === 0) {
+    return updatedBook = firstOrder
+  }
+
+  return updatedBook
 }
 
 module.exports = reconcileOrder
