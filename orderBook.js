@@ -32,9 +32,14 @@ const reconcileOrder = (existingBook, incomingOrder) => {
   return [...notUpdated, ...updatedBook]
 }
 
-//extra credit if statements in here
 const dealOrNoDeal = (existingOrder, incomingOrder) => {
   if (existingOrder.type !== incomingOrder.type && existingOrder.price === incomingOrder.price) {
+    return true
+  }
+  if (existingOrder.type > incomingOrder.type && existingOrder.price < incomingOrder.price) {
+    return true
+  }
+  if (existingOrder.type < incomingOrder.type && existingOrder.price > incomingOrder.price) {
     return true
   }
 
